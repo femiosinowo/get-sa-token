@@ -1,0 +1,41 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    run: get-sa-token
+  name: get-sa-token
+spec:
+  selector:
+    matchLabels:
+      run: get-sa-token
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: get-sa-token
+    spec:
+      containers:
+      - image: harbor.paosin.local/utils/get-sa-token:v1.3
+        imagePullPolicy: Always
+        name: get-sa-token
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /root/.kube/
+          name: kubeconfig
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 420
+          name: kubeconfig
+        name: kubeconfig
