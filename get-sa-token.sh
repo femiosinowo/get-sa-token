@@ -38,7 +38,7 @@ fi
 CURR_CXT=$(kubectl config current-context)
 CURR_CLUSTER=$(kubectl config view -o jsonpath={.contexts[?\(@.name==\"$CURR_CXT\"\)].context.cluster})
 API_ENDPOINT=$(kubectl config view -o jsonpath={.clusters[?\(@.name==\"$CURR_CLUSTER\"\)].cluster.server})
-printf "API endpoint: \\n%s\\n" "$API_ENDPOINT"
+#printf "API endpoint: \\n%s\\n" "$API_ENDPOINT"
 kubectl get sa ${ACCOUNT_NAME} -n ${NAMESPACE} -o jsonpath="{.secrets[].name}"
 
 ACCOUNT_SECRET=$(kubectl get sa ${ACCOUNT_NAME} -n ${NAMESPACE} -o jsonpath="{.secrets[].name}")
