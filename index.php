@@ -41,10 +41,10 @@
 						<span class="focus-input100" data-placeholder="Username"></span>
 					</div>
 
-					<div class="wrap-input100 m-b-50" data-validate="Enter password">
+					<div class="wrap-input100 m-b-50">
 					<input disabled class="input100" onclick="myFunction()" id="myInput">
 <?php
-	if ($_GET['run']) {
+	if ($_GET['username']) {
 	  # This code will run if ?run=true is set.
 	  # exec("/var/www/html/get-sa-token.sh -n test -a test");
 	  $output = shell_exec('/opt/app-root/src/get-sa-token.sh -n test -a test');
