@@ -40,12 +40,11 @@ fi
 #API_ENDPOINT=$(kubectl config view -o jsonpath={.clusters[?\(@.name==\"$CURR_CLUSTER\"\)].cluster.server})
 #printf "API endpoint: \\n%s\\n" "$API_ENDPOINT"
 
-#if ! $(kubectl get sa ${ACCOUNT_NAME} -n ${NAMESPACE} ); then printf "Username ${ACCOUNT_NAME} not found"; exit 1; fi
 
 ACCOUNT_SECRET=$(kubectl get sa ${ACCOUNT_NAME} -n ${NAMESPACE} -o jsonpath="{.secrets[].name}")
 
 if [ -z "$ACCOUNT_SECRET" ] ; then
-  err
+   printf "Username ${ACCOUNT_NAME} not found"
   exit 1
 fi
 
