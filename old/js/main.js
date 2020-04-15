@@ -4,7 +4,7 @@
 
 
     /*==================================================================
-    [ Focus Contact2 ]*/
+    [ Focus input ]*/
     $('.input100').each(function(){
         $(this).on('blur', function(){
             if($(this).val().trim() != "") {
@@ -66,5 +66,21 @@
         $(thisAlert).removeClass('alert-validate');
     }
     
-
+    
 })(jQuery);
+
+
+function myFunction() {
+  /* Get the text field */
+  var copyText = document.getElementById("myInput");
+
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Copied the text: ");
+}
