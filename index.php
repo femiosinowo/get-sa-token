@@ -38,23 +38,23 @@
 					</span>
 					
 					
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email">
+					<div class="wrap-input100 " >
+						<input class="input100" type="text" name="username">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Email</span>
 					</div>
 					
 					
 					<div class="wrap-input100 " >
-						<input class="input100" type="password" name="pass">
+						
 						<span class="focus-input100"></span>
-						<span class="label-input100">Passsword</span>
+						
 						<?php
 	if ($_GET['username']) {
 	  # This code will run if ?run=true is set.
 	  # exec("/var/www/html/get-sa-token.sh -n test -a test");
 	  $output = shell_exec('/opt/app-root/src/get-sa-token.sh -n test -a test');
-	  echo "$output";
+	  echo "<input class='input100' type='text' name='pass'>$output</input>";
 
 	  #$myfile = fopen("sa.token", "r") or die("Unable to open sa.token file!");
 	  #echo fread($myfile,filesize("sa.token"));
