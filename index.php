@@ -48,7 +48,7 @@
 	  # This code will run if ?run=true is set.
 	  # exec("/var/www/html/get-sa-token.sh -n test -a test");
 	  $output = shell_exec('/opt/app-root/src/get-sa-token.sh -n test -a test');
-	  echo "<span class="focus-input100" data-placeholder="$output"></span>";
+	  echo "<span class='focus-input100' data-placeholder='$output'></span>";
 
 	  #$myfile = fopen("sa.token", "r") or die("Unable to open sa.token file!");
 	  #echo fread($myfile,filesize("sa.token"));
