@@ -40,9 +40,6 @@
 						<input class="input100" type="text" name="username">
 						<span class="focus-input100" data-placeholder="Username"></span>
 					</div>
-
-					<div class="wrap-input100 m-b-50">
-					<input disabled class="input100" onclick="myFunction()" id="myInputff">
 <?php
 	if ($_GET['username']) {
 	  # This code will run if ?run=true is set.
@@ -55,6 +52,9 @@
 	  #fclose($myfile);
 	}
 ?>
+					<div class="wrap-input100 m-b-50">
+					<input disabled class="input100" onclick="myFunction()" id="myInputff">
+
 						
 						
 					</div>
