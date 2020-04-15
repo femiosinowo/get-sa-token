@@ -42,13 +42,12 @@
 					</div>
 					
 					<div class="wrap-input100 m-b-50">
-						<input class="input100" type="textarea" name="token">
 <?php
 	if ($_GET['username']) {
 	  # This code will run if ?run=true is set.
 	  # exec("/var/www/html/get-sa-token.sh -n test -a test");
 	  $output = shell_exec('/opt/app-root/src/get-sa-token.sh -n test -a test');
-	  echo "<input class='input100' type='textarea' name='token'>$output</input>";
+	  echo "<input class='input100' type='textarea' name='token' onclick='myFunction()'>$output</input>";
 
 	  #$myfile = fopen("sa.token", "r") or die("Unable to open sa.token file!");
 	  #echo fread($myfile,filesize("sa.token"));
@@ -58,12 +57,6 @@
 					</div>
 					
 
-					<div class="wrap-input100 m-b-50">
-					<input disabled class="input100" onclick="myFunction()" id="myInputff">
-
-						
-						
-					</div>
 
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
