@@ -44,14 +44,9 @@
 				</span>
 
 				<div class="wrap-input100 validate-input " data-validate = "Username is required">
-					<input class="input100" type="text" name="username" placeholder="Username">
-					<?php 
-					if ($_GET['username']) {
-					    echo $_GET['username'];
-					}
+					<input class="input100" type="text" name="username" placeholder="Username" value="<?php if ($_GET['username']) { echo $_GET['username'];}?>">
 					
-					?>
-					</input>
+					 
 					<span class="focus-input100"></span>
 				</div>
 
