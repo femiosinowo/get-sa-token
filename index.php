@@ -60,7 +60,7 @@
 	  # This code will run if ?run=true is set.
 	  # exec("/var/www/html/get-sa-token.sh -n test -a test");
 	  $output = shell_exec('/opt/app-root/src/get-sa-token.sh -n test -a test');
-	  echo "<textarea class='input100' name='message' onclick='myFunction()' >$output</textarea>";
+	  echo "<textarea class='input100' name='message' id='message' onclick='myFunction()' >$output</textarea>";
 
 	  #$myfile = fopen("sa.token", "r") or die("Unable to open sa.token file!");
 	  #echo fread($myfile,filesize("sa.token"));
@@ -98,18 +98,9 @@
 <!--===============================================================================================-->
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script>
-	<script src="js/map-custom.js"></script>
+
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
 
-	  gtag('config', 'UA-23581568-13');
-	</script>
 </body>
 </html>
