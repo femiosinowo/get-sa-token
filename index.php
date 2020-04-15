@@ -31,20 +31,20 @@
 
 
 	<div class="container-contact100">
-		<div class="contact100-map" id="google_map" data-pin="images/icons/map-marker.png" data-scrollwhell="0" data-draggable="1"></div>
+		<div class="contact100-map" id="google_map" ></div>
 
 		<div class="wrap-contact100">
 			<span class="contact100-form-symbol">
 				<img src="images/icons/symbol-01.png" alt="SYMBOL-MAIL">
 			</span>
 
-			<form class="contact100-form validate-form flex-sb flex-w">
+			<form class="contact100-form validate-form flex-sb flex-w"  action="index.php" method="post" >
 				<span class="contact100-form-title">
 					Retrieve Your Token
 				</span>
 
 				<div class="wrap-input100 validate-input " data-validate = "Username is required">
-					<input class="input100" type="text" name="username" placeholder="Username" value="<?php if ($_GET['username']) { echo $_GET['username'];}?>">
+					<input class="input100" type="text" name="username" placeholder="Username" value="<?php if ($_POST['username']) { echo $_POST['username'];}?>">
 					
 					 
 					<span class="focus-input100"></span>
@@ -58,7 +58,7 @@
 				<div class="wrap-input100">
 				 
 <?php
-	if ($_GET['username']) {
+if ($_POST['username']) {
 	  # This code will run if ?run=true is set.
 	  # exec("/var/www/html/get-sa-token.sh -n test -a test");
 	  $output = shell_exec('/opt/app-root/src/get-sa-token.sh -n test -a test');
