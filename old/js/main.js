@@ -4,6 +4,20 @@
 
 
     /*==================================================================
+    [ Focus input ]*/
+    $('.input100').each(function(){
+        $(this).on('blur', function(){
+            if($(this).val().trim() != "") {
+                $(this).addClass('has-val');
+            }
+            else {
+                $(this).removeClass('has-val');
+            }
+        })    
+    })
+  
+  
+    /*==================================================================
     [ Validate ]*/
     var input = $('.validate-input .input100');
 
@@ -53,21 +67,20 @@
     }
     
     
-
 })(jQuery);
 
 
 function myFunction() {
-	  /* Get the text field */
-	  var copyText = document.getElementById("myInput");
+  /* Get the text field */
+  var copyText = document.getElementById("myInput");
 
-	  /* Select the text field */
-	  copyText.select();
-	  copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /*For mobile devices*/
 
-	  /* Copy the text inside the text field */
-	  document.execCommand("copy");
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
 
-	  /* Alert the copied text */
-	  alert("Copied the text: ");
-	}
+  /* Alert the copied text */
+  alert("Copied the text: ");
+}

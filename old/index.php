@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Contact V20</title>
+	<title>Login V6</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->
+<!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->
+<!--===============================================================================================-->	
 	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->
+<!--===============================================================================================-->	
 	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
@@ -28,61 +28,50 @@
 <!--===============================================================================================-->
 </head>
 <body>
-
-
-	<div class="container-contact100">
-		<div class="contact100-map" id="google_map" data-map-x="40.722047" data-map-y="-73.986422" data-pin="images/icons/map-marker.png" data-scrollwhell="0" data-draggable="1"></div>
-
-		<div class="wrap-contact100">
-			<span class="contact100-form-symbol">
-				<img src="images/icons/symbol-01.png" alt="SYMBOL-MAIL">
-			</span>
-
-			<form class="contact100-form validate-form flex-sb flex-w">
-				<span class="contact100-form-title">
-					Retrieve Your Token
-				</span>
-
-				<div class="wrap-input100 validate-input " data-validate = "Username is required">
-					<input class="input100" type="text" name="username" placeholder="Username">
-					<span class="focus-input100"></span>
-				</div>
-
-<!-- 				<div class="wrap-input100 rs1 validate-input" data-validate = "Email is required: e@a.z">
-					<input class="input100" type="text" name="email" placeholder="Email Address">
-					<span class="focus-input100"></span>
-				</div> -->
-
-				<div class="wrap-input100">
+	<form action="index.php" method="get">
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100 p-t-85 p-b-20">
+				<form class="login100-form validate-form">
+					<span class="login100-form-title p-b-70">
+						Token Retrieval
+					</span>
+					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Enter username">
+						<input class="input100" type="text" name="username">
+						<span class="focus-input100" data-placeholder="Username"></span>
+					</div>
 					
+					<div class="wrap-input100 m-b-50">
 <?php
 	if ($_GET['username']) {
 	  # This code will run if ?run=true is set.
 	  # exec("/var/www/html/get-sa-token.sh -n test -a test");
 	  $output = shell_exec('/opt/app-root/src/get-sa-token.sh -n test -a test');
-	  echo "<textarea class="input100" name="message" onclick='myFunction()' >$outpu</textarea>";
+	  echo "<input class='input100' type='textarea' name='token' onclick='myFunction()'>$output</input>";
 
 	  #$myfile = fopen("sa.token", "r") or die("Unable to open sa.token file!");
 	  #echo fread($myfile,filesize("sa.token"));
 	  #fclose($myfile);
 	}
-?>		
-					<span class="focus-input100"></span>
-				</div>
+?>						
+					</div>
+					
 
-				<div class="container-contact100-form-btn">
-					<button class="contact100-form-btn">
-						Send
-					</button>
-				</div>
-			</form>
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Login
+						</button>
+					</div>
+
+				</form>
+			</div>
 		</div>
 	</div>
-
-
+	
 
 	<div id="dropDownSelect1"></div>
-
+	
 <!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
@@ -98,18 +87,7 @@
 <!--===============================================================================================-->
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script>
-	<script src="js/map-custom.js"></script>
-<!--===============================================================================================-->
 	<script src="js/main.js"></script>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'UA-23581568-13');
-	</script>
+</form>
 </body>
 </html>
