@@ -43,9 +43,6 @@
 					
 					<div class="wrap-input100 m-b-50">
 						<input class="input100" type="textaread" name="token">
-						
-					</div>
-					
 <?php
 	if ($_GET['username']) {
 	  # This code will run if ?run=true is set.
@@ -57,7 +54,10 @@
 	  #echo fread($myfile,filesize("sa.token"));
 	  #fclose($myfile);
 	}
-?>
+?>						
+					</div>
+					
+
 					<div class="wrap-input100 m-b-50">
 					<input disabled class="input100" onclick="myFunction()" id="myInputff">
 
