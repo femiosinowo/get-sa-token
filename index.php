@@ -61,7 +61,7 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	  # This code will run if ?run=true is set.
 	  # exec("/var/www/html/get-sa-token.sh -n test -a test");
-    $username = $_POST['username'];
+      $username = $_POST['username'];
 	  $output = shell_exec("/opt/app-root/src/get-sa-token.sh -n test -a $username");
 	  echo "<textarea class='input100' name='message' id='message' onclick='myFunction()' >$output</textarea>";
 
