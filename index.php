@@ -54,6 +54,7 @@
 				</div> -->
 
 				<div class="wrap-input100">
+				<span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
 					
 <?php
 	if ($_GET['username']) {
