@@ -1,0 +1,38 @@
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  # "namespace" omitted since ClusterRoles are not namespaced
+  name: secret-reader
+  namespace: test
+rules:
+- apiGroups: [""]
+  resources: ["secrets"]
+  verbs: ["get", "watch", "list"]
+
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: default-rolebinding
+subjects:
+- kind: ServiceAccount
+  name: default
+  namespace: test
+roleRef:
+   kind: ClusterRole
+   name: view
+   apiGroup: ""
+
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: default-rolebinding-secret-reader
+subjects:
+- kind: ServiceAccount
+  name: default
+  namespace: test
+roleRef:
+  kind: Role
+  name: secret-reader
+  apiGroup: ""
