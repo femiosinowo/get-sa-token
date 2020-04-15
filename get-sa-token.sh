@@ -40,7 +40,7 @@ fi
 #API_ENDPOINT=$(kubectl config view -o jsonpath={.clusters[?\(@.name==\"$CURR_CLUSTER\"\)].cluster.server})
 #printf "API endpoint: \\n%s\\n" "$API_ENDPOINT"
 
-if ! kubectl get sa ${ACCOUNT_NAME} -n ${NAMESPACE} ; then printf "Username not found"; exit 1; fi
+if ! kubectl get sa ${ACCOUNT_NAME} -n ${NAMESPACE} 2> /dev/null; then printf "Username not found"; exit 1; fi
 
 ACCOUNT_SECRET=$(kubectl get sa ${ACCOUNT_NAME} -n ${NAMESPACE} -o jsonpath="{.secrets[].name}")
 #kubectl get secret ${ACCOUNT_SECRET} -n ${NAMESPACE} -o go-template='{{index .data "ca.crt"}}' | base64 --decode > ca.crt
